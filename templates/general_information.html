@@ -1,0 +1,151 @@
+{%extends "menu.html"%}
+{%block content%}
+<div class ="general_information">
+
+	<!-- Java Script -->	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+		
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">PCOS Test</span>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "/predict" method ="POST" >
+				<form autocomplete="on">
+				<fieldset>
+				<legend><h1 style="color:rgb(100, 100, 100);">PCOS Test Form</h1></legend><br>
+				  <div class="card card-body" >
+					  <h2 style="background-color:#f8f8f8;"><i>General Information</i></h2>
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="Age">Age</label>
+							<input type="number" class="form-control" id="Age" name="Age" required>
+						</div>
+
+						<div class="col-sm-3">
+							<label for="BMI">BMI</label>
+							<input type="number" step="any" class="form-control" id="BMI" name="BMI" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="Waist/Hip Ratio">Waist/Hip Ratio</label>
+							<input type="number" step="any" class="form-control" id="Waist/Hip Ratio" name="Waist/Hip Ratio" required>
+						</div>
+						</div>
+						<br>
+					   <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="Weightgain">Weight gain</label>
+							<select class="form-control" id="Weightgain"  name="Weightgain" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					    </div>
+					  
+					    <div class="col-sm-3">
+							<label for="Skindarkening">Skin darkening</label>
+							<select class="form-control" id="Skindarkening"  name="Skindarkening" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					     </div>
+					     
+					     
+					     <div class="col-sm-3">
+							<label for="hairgrowth">Hair growth</label>
+							<select class="form-control" id="hairgrowth"  name="hairgrowth" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					     </div>
+					     
+					     <div class="col-sm-3">
+							<label for="Hairloss">Hair loss</label>
+							<select class="form-control" id="Hairloss"  name="Hairloss" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					     </div>
+					  </div>
+					  <br>
+					  
+					<div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="Pimples">Pimples</label>
+							<select class="form-control" id="Pimples"  name="Pimples" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					    </div>
+					  
+					     <div class="col-sm-3">
+							<label for="Fastfood">Fast food</label>
+							<select class="form-control" id="Fastfood"  name="Fastfood" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					     </div>
+					     
+					     <div class="col-sm-3">
+							<label for="RegExercise">Regular Exercise</label>
+							<select class="form-control" id="RegExercise"  name="RegExercise" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					     </div>
+					  </div>
+					  <br>	
+					  
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="Cyclelength(days)">Cycle length(days)</label>
+							<input type="number" class="form-control" id="Cyclelength(days)" name="Cyclelength(days)" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="MarriageStatus (Yrs)">Marriage Status (Yrs)</label>
+							<input type="number" class="form-control" id="MarriageStatus (Yrs)" name="MarriageStatus (Yrs)" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="Noofabortions">Number of abortions</label>
+							<input type="number" class="form-control" id="Noofabortions" name="Noofabortions" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="Pregnant">Pregnant</label>
+							<select class="form-control" id="Pregnant"  name="Pregnant" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+						</div>
+					  </div>
+					
+					    
+					 
+
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Result" onclick=(PCOS_prediction_app.py);>
+					  </div>
+					  
+					  <!--Prediction Result-->
+					  <div id ="result">
+							<strong style="background-color:hsla(9, 100%, 64%, 0.2)">{{result}}</strong>
+					 </div>
+				     </div>
+			 </fieldset>
+			</form>
+			
+		</div>
+		
+</div>
+{%endblock%}
